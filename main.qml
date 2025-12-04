@@ -44,9 +44,72 @@ Window {
                 color: "white"
             }
 
-            Button {
-                text: "Open Image"
-                onClicked: file_explorer.visible = true
+            Rectangle {
+                id:open_img
+                width: 120
+                height: 40
+                color: "transparent"
+                border.color: "#ffffff"
+
+                Text {
+                    anchors.centerIn: parent
+                    text: "Open"
+                    color: "white"
+                    font.pixelSize: 25
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        console.log("clicked")
+                    }
+                }
+            }
+            // FolderListModel（注意：不能用 qrc）
+            FolderListModel {
+                id: folderModel
+                folder: "/root"  // 改成真实目录
+                nameFilters: ["*.*"]
+            }
+
+            // 文件列表（可滚动）
+            Flickable {
+                id: flick
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: parent.width
+                height: parent.height - 100
+                contentHeight: fileListContent.height
+
+                Column {
+                    id: fileListContent
+                    width: flick.width
+
+                    Repeater {
+                        model: folderModel
+
+                        Rectangle {
+                            width: parent.width
+                            height: 40
+                            color: "#222"
+
+                            Text {
+                                anchors.verticalCenter: parent.verticalCenter
+                                anchors.left: parent.left
+                                anchors.leftMargin: 10
+                                text: fileName
+                                color: "white"
+                            }
+
+                            MouseArea {
+                                anchors.fill: parent
+                                onClicked: {
+                                    selectedImage = filePath
+                                    file_explorer.visible = false
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
