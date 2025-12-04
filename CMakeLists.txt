@@ -39,6 +39,7 @@ else()
           ${PROJECT_SOURCES}
           app/brightness.h app/brightness.cpp
           app/sampling.h app/sampling_win.cpp
+          img.qrc
         )
     else()
         add_executable(overlay

@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
             if(!obj && url == objUrl) QCoreApplication::exit(-1);
             QQuickWindow* win = qobject_cast<QQuickWindow*>(obj);
             win->show();
-            QTimer::singleShot(100, [win](){enableClickThrought(win);});
+            // QTimer::singleShot(100, [win](){enableClickThrought(win);});
         },
         Qt::QueuedConnection);
     engine.load(url);
