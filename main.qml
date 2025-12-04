@@ -1,6 +1,5 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
-import QtQuick.Controls 2.15
 import Qt.labs.folderlistmodel 2.15
 
 Window {
@@ -135,70 +134,6 @@ Window {
         MouseArea {
             anchors.fill: parent
             onClicked: menu_open = !menu_open
-        }
-    }
-
-    Rectangle {
-        id: file_explorer
-        visible: false
-        z: 50
-        anchors.fill: parent
-        color: "black"
-
-        Column {
-            anchors.fill: parent
-            anchors.margins: 20
-
-            Text {
-                text: "Select Image"
-                font.bold: true
-                font.pointSize: 20
-                color: "white"
-            }
-
-
-
-            Rectangle {
-                width: parent.width
-                height: parent.height - 120   // 给 ListView 合理高度
-                color: "white"
-
-                ListView {
-                    anchors.fill: parent
-
-                    FolderListModel {
-                        id: folder_model
-                        nameFilters: ["*.*"]
-                        folder: "/root"
-                    }
-
-                    model: folder_model
-
-                    delegate: Rectangle {
-                        width: parent.width
-                        height: 40
-
-                        Text {
-                            anchors.verticalCenter: parent.verticalCenter
-                            text: fileName
-                            color: "black"
-                        }
-
-                        /*MouseArea {
-                            anchors.fill: parent
-                            onClicked: {
-                                selectedImage = filePath
-                                file_explorer.visible = false
-                            }
-                        }*/
-                    }
-                }
-            }
-
-            Button {
-                text: "Close"
-                onClicked: file_explorer.visible = false
-            }
         }
     }
 
