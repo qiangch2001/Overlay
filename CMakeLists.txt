@@ -49,6 +49,9 @@ else()
           app/brightness.h app/brightness.cpp
           app/sampling.h app/sampling_bbb.cpp
           app/brtbackend.h app/brtbackend.cpp
+          app/lightsensor.h app/lightsensor.cpp
+          app/NightModeController.h app/NightModeController.cpp
+          app/gpioreader.h app/gpioreader.cpp
         )
         endif()
 endif()

@@ -6,6 +6,9 @@
 
 #include "app/brightness.h"
 #include "app/brtbackend.h"
+#include "app/lightsensor.h"
+#include "app/NightModeController.h"
+#include "app/gpioreader.h"
 
 void enableClickThrought(QQuickWindow* window) {
 #ifdef Q_OS_WIN
@@ -34,6 +37,15 @@ int main(int argc, char *argv[]) {
 
     BrtBackend backend;
     engine.rootContext()->setContextProperty("BrtBackend", &backend);
+
+    LightSensor sensor;
+    engine.rootContext()->setContextProperty("LightSensor", &sensor);
+
+    GpioReader gpio;
+    engine.rootContext()->setContextProperty("Gpio", &gpio);
+
+    NightModeController nightModeCtrl;
+    engine.rootContext()->setContextProperty("NightModeController", &nightModeCtrl);
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,

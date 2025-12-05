@@ -77,6 +77,7 @@ static double compute_screen_luminance(BrightnessAlgo algo, double wR, double wG
     }
 
     double result = algo(samples, count);
+    // printf("count=%d, luminance=%.4f\n", count, result);
     free(samples);
     return result;
 }
