@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>res/img1.png</file>
-        <file>res/setting.jpg</file>
-        <file>res/setting.png</file>
         <file>res/setting_w.png</file>
         <file>res/brightness_w.png</file>
+        <file>res/brightness_b.png</file>
+        <file>res/setting_b.png</file>
     </qresource>
 </RCC>

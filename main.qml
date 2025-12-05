@@ -238,8 +238,7 @@ Window {
                 }
 
                 Image {
-                    source: nightMode ? "res/brightness_w.png"
-                                      : "res/brightness_b.png"
+                    source: nightMode? "res/brightness_w.png": "res/brightness_b.png"
                     width: 22; height: 22
                     anchors.left: parent.left
                     anchors.leftMargin: 5
@@ -260,7 +259,7 @@ Window {
                         height: 4
                         width: parent.width
                         radius: 2
-                        color: nightMode ? "#3a3a3a" : "#cccccc"
+                        color: nightMode? "#cccccc": "#3a3a3a"
                         anchors.verticalCenter: parent.verticalCenter
                     }
 
