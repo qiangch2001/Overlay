@@ -383,12 +383,12 @@ Window {
                                     onClicked: {
                                         brightnessModeSelector.selectedMode = modelData
                                         dropdown.visible = false
-                                    }
 
-                                    if (modelData === "Personalized") {
-                                        personalizeButton.visible = true
-                                    } else {
-                                        personalizeButton.visible = false
+                                        if (modelData === "Personalized") {
+                                            personalizeButton.visible = true
+                                        } else {
+                                            personalizeButton.visible = false
+                                        }
                                     }
                                 }
                             }
@@ -492,8 +492,6 @@ Window {
                     redPanel.alpha   = 0.5
                     greenPanel.alpha = 0.5
                     bluePanel.alpha  = 0.5
-
-                    slider.value = 
                 }
             }
         }
