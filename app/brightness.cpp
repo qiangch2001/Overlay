@@ -84,7 +84,7 @@ static double compute_screen_luminance(BrightnessAlgo algo)
 // =================== BrightnessReader 类 =====================
 Brightness::Brightness(QObject* parent): QObject(parent) {
     // 默认算法：物理平均亮度
-    algo = algo_topk5;
+    algo = algo_physical;
 }
 
 void Brightness::setAlgorithm(int method)
@@ -96,7 +96,7 @@ void Brightness::setAlgorithm(int method)
     case 2: algo = algo_topk10;   break;
     case 3: algo = algo_weighted; break;
     default:
-        algo = algo_topk5;
+        algo = algo_physical;
         break;
     }
 }
