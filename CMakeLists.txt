@@ -16,6 +16,7 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 set(PROJECT_SOURCES
         main.cpp
         qml.qrc
+        img.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

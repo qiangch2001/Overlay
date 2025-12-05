@@ -158,7 +158,7 @@ Window {
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.margins:15
-        source: "qrc:/res/setting_w.png"
+        source: "res/setting_w.png"
         z: 20
 
         MouseArea {
@@ -209,7 +209,7 @@ Window {
                 }
 
                 Image {
-                    source: "qrc:/res/brightness_w.png"
+                    source: "res/brightness_w.png"
                     width: 22
                     height: 22
                     anchors.left: parent.left
