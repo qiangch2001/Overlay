@@ -2,7 +2,7 @@ import QtQuick 2.15
 
 Item {
     id: root
-    width: 480
+    width: 150
     height: parent.height
 
     property color baseColor: "red"

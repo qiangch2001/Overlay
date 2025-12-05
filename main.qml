@@ -430,9 +430,29 @@ Window {
             Column {
                 spacing: 30
 
+                // ===== 关闭按钮（右上角）=====
+                Rectangle {
+                    width: 100
+                    height: 40
+                    radius: 6
+                    color: "#444"
+
+                    Text {
+                        anchors.centerIn: parent
+                        text: "Close"
+                        color: "white"
+                        font.bold: true
+                    }
+
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: calibPage.visible = false
+                    }
+                }
+
                 // 重置按钮
                 Rectangle {
-                    width: 120
+                    width: 100
                     height: 40
                     radius: 6
                     color: "#555"
@@ -456,7 +476,7 @@ Window {
 
                 // 确认按钮
                 Rectangle {
-                    width: 140
+                    width: 100
                     height: 40
                     radius: 6
                     color: "#ff7a3c"
@@ -489,26 +509,6 @@ Window {
 
                             calibPage.visible = false
                         }
-                    }
-                }
-
-                // ===== 关闭按钮（右上角）=====
-                Rectangle {
-                    width: 100
-                    height: 40
-                    radius: 6
-                    color: "#444"
-
-                    Text {
-                        anchors.centerIn: parent
-                        text: "Close"
-                        color: "white"
-                        font.bold: true
-                    }
-
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: calibPage.visible = false
                     }
                 }
             }
