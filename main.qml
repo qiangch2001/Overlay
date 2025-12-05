@@ -442,12 +442,12 @@ Window {
                     let wG = g / s
                     let wB = b / s
 
-                    console.log("User RGB Weights:", wR, wG, wB)
+                    BrtBackend.wR = wR
+                    BrtBackend.wG = wG
+                    BrtBackend.wB = wB
 
-                    // ✅ 这里你后面可以接 C++ / Settings 保存
-                    // userWR = wR
-                    // userWG = wG
-                    // userWB = wB
+                    console.log("User RGB Weights:", wR, wG, wB)
+                    Brightness.setUserRGBWeights(wR, wG, wB)
 
                     calibPage.visible = false
                 }

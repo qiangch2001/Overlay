@@ -65,12 +65,12 @@ double algo_weighted(double* L, int count)
 }
 
 // =================== 主计算函数（策略模式） =====================
-static double compute_screen_luminance(BrightnessAlgo algo)
+static double compute_screen_luminance(BrightnessAlgo algo, double wR, double wG, double wB)
 {
     const int MAX_SAMPLES = 20000;
     double* samples = (double*)malloc(sizeof(double) * MAX_SAMPLES);
 
-    int count = capture_samples(samples, MAX_SAMPLES);
+    int count = capture_samples(samples, MAX_SAMPLES, wR, wG, wB);
     if (count <= 0) {
         free(samples);
         return 0.0;
@@ -101,7 +101,12 @@ void Brightness::setAlgorithm(int method)
     }
 }
 
-double Brightness::readScreenLuminance()
-{
-    return compute_screen_luminance(algo);
+double Brightness::readScreenLuminance() {
+    return compute_screen_luminance(algo, m_wR, m_wG, m_wB);
+}
+
+void Brightness::setUserRGBWeights(double r, double g, double b) {
+    m_wR = r;
+    m_wG = g;
+    m_wB = b;
 }

@@ -7,8 +7,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-int capture_samples(double* samples, int maxSamples)
-{
+int capture_samples(double* samples, int maxSamples, double wR, double wG, double wB) {
     int fb = open("/dev/fb0", O_RDONLY);
     if (fb < 0) return 0;
 
@@ -37,7 +36,7 @@ int capture_samples(double* samples, int maxSamples)
             uint8_t G = (p >> vinfo.green.offset) & ((1<<vinfo.green.length)-1);
             uint8_t B = (p >> vinfo.blue.offset)  & ((1<<vinfo.blue.length)-1);
 
-            samples[idx++] = (0.299*R + 0.587*G + 0.114*B) / 255.0;
+            samples[idx++] = (wR*R + wG*G + wB*B) / 255.0;
         }
     }
 

@@ -5,6 +5,7 @@
 #include <QTimer>
 
 #include "app/brightness.h"
+#include "app/brtbackend.h"
 
 void enableClickThrought(QQuickWindow* window) {
 #ifdef Q_OS_WIN
@@ -30,6 +31,9 @@ int main(int argc, char *argv[]) {
 
     Brightness br;
     engine.rootContext()->setContextProperty("Brightness", &br);
+
+    BrtBackend backend;
+    engine.rootContext()->setContextProperty("BrtBackend", &backend);
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(
         &engine,
