@@ -333,13 +333,13 @@ Window {
         repeat: true
 
         onTriggered: {
-            let L_measured = Brightness.readScreenLuminance()
+            let L_measured = Brightness.readScreenLuminance() * 100
             let L_target   = bsb.value          // ✅ 目标亮度 = 滑条给定 %
             let error      = L_target - L_measured
 
             let k = 0.005   // ✅ 比例系数（你可以微调）
 
-            overlay_opacity += k * error
+            overlay_opacity -= k * error
 
             // ✅ 饱和限制，防止溢出
             if (overlay_opacity < 0.1) overlay_opacity = 0.1
