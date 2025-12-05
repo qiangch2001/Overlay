@@ -174,7 +174,7 @@ Window {
         id: setting_panel
         width: parent.width * 0.6
         height: parent.height
-        color: "#d5c8c800"
+        color: "#d5121200"
         anchors.right: parent.right
         z: 10
         visible: false
@@ -314,6 +314,30 @@ Window {
                     }
                 }
             }
+
+            Rectangle {
+                id: rectangle
+                width: 120
+                height: 40
+                color: "#323232"
+                radius: 6
+
+                Text {
+                    text: "Personalize"
+                    anchors.centerIn: parent
+                    font.pointSize: 12
+                    font.bold: true
+                    color: "white"
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    onClicked: {
+                        calibPage.visible = true   // ✅ 打开全屏页面
+                    }
+                }
+            }
         }
     }
 
@@ -324,7 +348,7 @@ Window {
         anchors.fill: parent
         color: "black"
         opacity: overlay_opacity
-        z: 999
+        z: 900
     }
 
     Timer {
@@ -350,5 +374,153 @@ Window {
                         "opacity =", overlay_opacity)
         }
     }
+
+    // ===== 全屏个性化标定页面 =====
+    Item {
+        id: calibPage
+        anchors.fill: parent
+        visible: false
+        z: 1000
+
+        // ===== 背景 =====
+        Rectangle {
+            anchors.fill: parent
+            color: "black"
+        }
+
+        // ===== 顶部标题 =====
+        Text {
+            text: "RGB Personal Luminance Calibration"
+            anchors.top: parent.top
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.topMargin: 20
+            color: "white"
+            font.pointSize: 20
+            font.bold: true
+        }
+
+        // ===== 三色标定区域 =====
+        Row {
+            id: rgbRow
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.top: parent.top
+            anchors.bottom: parent.bottom
+            anchors.margins: 80
+            spacing: 40
+
+            ColorCalibPanel {
+                id: redPanel
+                baseColor: "red"
+                label: "Red"
+            }
+
+            ColorCalibPanel {
+                id: greenPanel
+                baseColor: "green"
+                label: "Green"
+            }
+
+            ColorCalibPanel {
+                id: bluePanel
+                baseColor: "blue"
+                label: "Blue"
+            }
+        }
+
+        // ===== 底部按钮区 =====
+        Row {
+            spacing: 30
+            anchors.bottom: parent.bottom
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottomMargin: 30
+
+            // 重置按钮
+            Rectangle {
+                width: 120
+                height: 40
+                radius: 6
+                color: "#555"
+
+                Text {
+                    anchors.centerIn: parent
+                    text: "Reset"
+                    color: "white"
+                    font.bold: true
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        redPanel.alpha   = 0.5
+                        greenPanel.alpha = 0.5
+                        bluePanel.alpha  = 0.5
+                    }
+                }
+            }
+
+            // 确认按钮
+            Rectangle {
+                width: 140
+                height: 40
+                radius: 6
+                color: "#ff7a3c"
+
+                Text {
+                    anchors.centerIn: parent
+                    text: "Confirm"
+                    color: "white"
+                    font.bold: true
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: {
+                        let r = 1 - redPanel.alpha
+                        let g = 1 - greenPanel.alpha
+                        let b = 1 - bluePanel.alpha
+                        let s = r + g + b
+
+                        let wR = r / s
+                        let wG = g / s
+                        let wB = b / s
+
+                        console.log("User RGB Weights:", wR, wG, wB)
+
+                        // ✅ 这里你后面可以接 C++ / Settings 保存
+                        // userWR = wR
+                        // userWG = wG
+                        // userWB = wB
+
+                        calibPage.visible = false
+                    }
+                }
+            }
+        }
+
+        // ===== 关闭按钮（右上角）=====
+        Rectangle {
+            width: 100
+            height: 40
+            radius: 6
+            color: "#444"
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.margins: 20
+
+            Text {
+                anchors.centerIn: parent
+                text: "Close"
+                color: "white"
+                font.bold: true
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: calibPage.visible = false
+            }
+        }
+    }
+
 
 }
