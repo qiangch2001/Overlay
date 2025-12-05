@@ -1,0 +1,3 @@
+mkdir -p ../src
+cmake -S ../src/ -B build-cross-server -DCMAKE_TOOLCHAIN_FILE=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/share/buildroot/toolchainfile.cmake -DCMAKE_BUILD_TYPE=Release
+cmake --build build-cross-server -j$(nproc)

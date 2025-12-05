@@ -63,7 +63,6 @@ Item {
 
             function update(py) {
                 let y = Math.max(0, Math.min(py, height - handle.height))
-                handle.y = y
                 root.alpha = y / (height - handle.height)
             }
         }
