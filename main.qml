@@ -327,13 +327,27 @@ Window {
     }
 
     Timer {
-        interval: 1000
+        interval: 100   // ✅ 10Hz 控制频率（很稳）
         running: true
         repeat: true
+
         onTriggered: {
-            let L = Brightness.readScreenLuminance()
-            console.log("Brightness", L)
-            overlay_opacity = L / 4
+            let L_measured = Brightness.readScreenLuminance()
+            let L_target   = bsb.value          // ✅ 目标亮度 = 滑条给定 %
+            let error      = L_target - L_measured
+
+            let k = 0.005   // ✅ 比例系数（你可以微调）
+
+            overlay_opacity += k * error
+
+            // ✅ 饱和限制，防止溢出
+            if (overlay_opacity < 0) overlay_opacity = 0
+            if (overlay_opacity > 1) overlay_opacity = 1
+
+            console.log("L_measured =", L_measured,
+                        "L_target =", L_target,
+                        "opacity =", overlay_opacity)
         }
     }
+
 }
