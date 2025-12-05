@@ -17,8 +17,6 @@ Window {
         z: 0
     }
 
-    property bool menu_open: false
-
     Rectangle {
         id: menu_panel
         width: parent.width * 0.6
@@ -26,7 +24,7 @@ Window {
         color: "#d5c8c800"
         anchors.left: parent.left
         z: 10
-        visible: menu_open
+        visible: false
 
         Column {
             id: column
@@ -146,7 +144,175 @@ Window {
 
         MouseArea {
             anchors.fill: parent
-            onClicked: menu_open = !menu_open
+            onClicked: {
+                menu_panel.visible = !menu_panel.visible
+                setting_panel.visible = false
+            }
+        }
+    }
+
+    Image {
+        id: setting_button
+        width: 30
+        height: 30
+        anchors.right: parent.right
+        anchors.top: parent.top
+        anchors.margins:15
+        source: "qrc:/res/setting_w.png"
+        z: 20
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                setting_panel.visible = !setting_panel.visible
+                menu_panel.visible = false
+            }
+        }
+    }
+
+    Rectangle {
+        id: setting_panel
+        width: parent.width * 0.6
+        height: parent.height
+        color: "#d5c8c800"
+        anchors.right: parent.right
+        z: 10
+        visible: false
+
+        Column {
+            anchors.fill: parent
+            anchors.margins: 20
+            spacing: 10
+
+            Text {
+                text: "Setting"
+                anchors.left: parent.left
+                font.pointSize: 15
+                color: "white"
+            }
+
+            // Brightness Scroll Bar
+            Item {
+                id: bsb
+                width: 420
+                height: 40
+
+                property real value: 30
+                property real minValue: 0
+                property real maxValue: 100
+
+                Rectangle {
+                    anchors.fill: parent
+                    radius: 12
+                    color: "#202020"
+                    opacity: 0.95
+                }
+
+                Image {
+                    source: "qrc:/res/brightness_w.png"
+                    width: 22
+                    height: 22
+                    anchors.left: parent.left
+                    anchors.leftMargin: 5
+                    anchors.verticalCenter: parent.verticalCenter
+                }
+
+                // 滑轨
+                Item {
+                    id: track
+                    anchors.left: parent.left
+                    anchors.leftMargin: 30
+                    anchors.right: parent.right
+                    anchors.rightMargin: 5
+                    anchors.verticalCenter: parent.verticalCenter
+                    height: 20
+
+                    // 灰色底轨
+                    Rectangle {
+                        id: bg
+                        height: 4
+                        width: parent.width
+                        radius: 2
+                        color: "#3a3a3a"
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+
+                    // 橙色进度
+                    /*
+                    Rectangle {'
+                        id: fill
+                        height: 4
+                        radius: 2
+                        color: "#ff7a3c"
+                        anchors.left: bg.left
+                        anchors.verticalCenter: bg.verticalCenter
+                        width: handle.x + handle.width / 2
+                    }
+                    */
+
+                    // 拖动手柄
+                    Rectangle {
+                        id: handle
+                        width: 14
+                        height: 14
+                        radius: 7
+                        color: sliderMouse.pressed ? "#ff9c6b" : "#ff7a3c"
+                        border.color: "#ffb08a"
+                        border.width: 1
+                        y: bg.y + bg.height / 2 - height / 2
+
+                        x: (bsb.value - bsb.minValue) /
+                           (bsb.maxValue - bsb.minValue) *
+                           (track.width - width)
+
+                        Behavior on x {
+                            NumberAnimation { duration: 80 }
+                        }
+                    }
+
+                    // 拖动逻辑
+                    MouseArea {
+                        id: sliderMouse
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        cursorShape: Qt.PointingHandCursor
+
+                        onPressed: {
+                            update(mouse.x)
+                            throttleTimer.start()
+                        }
+
+                        onPositionChanged: if (pressed) {
+                            update(mouse.x)   // UI 仍然高频
+                        }
+
+                        onReleased: {
+                            throttleTimer.stop()
+                            //backend.setValue(bsb.value)  // ✅ 最后再补一次
+                        }
+
+
+                        function update(px) {
+                            var w = track.width - handle.width
+                            var x = Math.min(w, Math.max(0, px - handle.width / 2))
+                            handle.x = x
+                            bsb.value = bsb.minValue + (x / w) * (bsb.maxValue - bsb.minValue)
+
+                            // console.log("value =", bsb.value)
+                        }
+                    }
+
+                    Timer {
+                        id: throttleTimer
+                        interval: 500    // ✅ 50ms = 20Hz
+                        repeat: true
+                        running: false
+                        onTriggered: {
+                            console.log("限频输出:", bsb.value)
+                        }
+                    }
+                }
+            }
         }
     }
 
