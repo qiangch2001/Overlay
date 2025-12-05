@@ -388,6 +388,72 @@ Window {
             color: "black"
         }
 
+        // 重置按钮
+        Rectangle {
+            width: 100
+            height: 40
+            radius: 6
+            anchors.left: parent.left
+            anchors.top: parent.top
+            color: "#555"
+
+            Text {
+                anchors.centerIn: parent
+                text: "Reset"
+                color: "white"
+                font.bold: true
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    redPanel.alpha   = 0.5
+                    greenPanel.alpha = 0.5
+                    bluePanel.alpha  = 0.5
+                }
+            }
+        }
+
+        // 确认按钮
+        Rectangle {
+            width: 100
+            height: 40
+            radius: 6
+            anchors.right: parent.right
+            anchors.top: parent.top
+            color: "#ff7a3c"
+
+            Text {
+                anchors.centerIn: parent
+                text: "Confirm"
+                color: "white"
+                font.bold: true
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                onClicked: {
+                    let r = 1 - redPanel.alpha
+                    let g = 1 - greenPanel.alpha
+                    let b = 1 - bluePanel.alpha
+                    let s = r + g + b
+
+                    let wR = r / s
+                    let wG = g / s
+                    let wB = b / s
+
+                    console.log("User RGB Weights:", wR, wG, wB)
+
+                    // ✅ 这里你后面可以接 C++ / Settings 保存
+                    // userWR = wR
+                    // userWG = wG
+                    // userWB = wB
+
+                    calibPage.visible = false
+                }
+            }
+        }
+
         // ===== 顶部标题 =====
         Text {
             text: "RGB Personal Luminance Calibration"
@@ -406,7 +472,7 @@ Window {
             anchors.top: parent.top
             anchors.bottom: parent.bottom
             anchors.topMargin: 40
-            spacing: 10
+            spacing: 15
 
             ColorCalibPanel {
                 id: redPanel
@@ -424,93 +490,6 @@ Window {
                 id: bluePanel
                 baseColor: "blue"
                 label: "Blue"
-            }
-
-            // ===== 底部按钮区 =====
-            Column {
-                spacing: 30
-
-                // ===== 关闭按钮（右上角）=====
-                Rectangle {
-                    width: 100
-                    height: 40
-                    radius: 6
-                    color: "#444"
-
-                    Text {
-                        anchors.centerIn: parent
-                        text: "Close"
-                        color: "white"
-                        font.bold: true
-                    }
-
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: calibPage.visible = false
-                    }
-                }
-
-                // 重置按钮
-                Rectangle {
-                    width: 100
-                    height: 40
-                    radius: 6
-                    color: "#555"
-
-                    Text {
-                        anchors.centerIn: parent
-                        text: "Reset"
-                        color: "white"
-                        font.bold: true
-                    }
-
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            redPanel.alpha   = 0.5
-                            greenPanel.alpha = 0.5
-                            bluePanel.alpha  = 0.5
-                        }
-                    }
-                }
-
-                // 确认按钮
-                Rectangle {
-                    width: 100
-                    height: 40
-                    radius: 6
-                    color: "#ff7a3c"
-
-                    Text {
-                        anchors.centerIn: parent
-                        text: "Confirm"
-                        color: "white"
-                        font.bold: true
-                    }
-
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            let r = 1 - redPanel.alpha
-                            let g = 1 - greenPanel.alpha
-                            let b = 1 - bluePanel.alpha
-                            let s = r + g + b
-
-                            let wR = r / s
-                            let wG = g / s
-                            let wB = b / s
-
-                            console.log("User RGB Weights:", wR, wG, wB)
-
-                            // ✅ 这里你后面可以接 C++ / Settings 保存
-                            // userWR = wR
-                            // userWG = wG
-                            // userWB = wB
-
-                            calibPage.visible = false
-                        }
-                    }
-                }
             }
         }
     }
