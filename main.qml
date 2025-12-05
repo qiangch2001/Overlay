@@ -12,7 +12,7 @@ Window {
 
     Image {
         anchors.fill: parent
-        source: selected_image != "" ? selected_image : "res/img1.jpg"
+        source: selected_image
         fillMode: Image.PreserveAspectFit
         z: 0
     }
@@ -21,10 +21,10 @@ Window {
 
     Rectangle {
         id: menu_panel
-        width: parent.width * 0.3
-        height: parent.width
+        width: parent.width * 0.6
+        height: parent.height
         color: "#d5c8c800"
-        anchors.right: parent.right
+        anchors.left: parent.left
         z: 10
         visible: menu_open
 
@@ -35,17 +35,74 @@ Window {
             anchors.fill: parent
 
             Text {
-                text: "Settings"
+                text: "File Explorer"
                 anchors.left: parent.left
-                anchors.leftMargin: 60
-                font.bold: true
-                font.pointSize: 30
+                anchors.leftMargin: 30
+                font.pointSize: 15
                 color: "white"
             }
+            Rectangle {
+                id: file_window
+                width: parent.width
+                height: parent.height - 30
+                color: "transparent"
 
+                // FolderListModel（注意：不能用 qrc）
+                FolderListModel {
+                    id: folderModel
+                    folder: "/root"  // 改成真实目录
+                    nameFilters: ["*.png", "*.jpg"]
+                }
+
+                // 文件列表（可滚动）
+                Flickable {
+                    id: file_explorer
+                    anchors.fill: parent
+                    contentHeight: fileListContent.height
+                    clip: true
+
+                    Rectangle {
+                        anchors.fill: parent
+                        color: "#ffffff99"
+                        opacity: 0.3
+                    }
+
+                    Column {
+                        id: fileListContent
+                        width: parent.width
+
+                        Repeater {
+                            model: folderModel
+
+                            Rectangle {
+                                width: parent.width
+                                height: 40
+                                color: "#222"
+
+                                Text {
+                                    anchors.verticalCenter: parent.verticalCenter
+                                    anchors.left: parent.left
+                                    anchors.leftMargin: 10
+                                    text: fileName
+                                    color: "white"
+                                }
+
+                                MouseArea {
+                                    anchors.fill: parent
+                                    onClicked: {
+                                        selected_image = "file:///" + filePath
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            /*
             Rectangle {
                 id:open_img
-                width: 120
+                width: 100
                 height: 40
                 color: "transparent"
                 border.color: "#ffffff"
@@ -61,67 +118,23 @@ Window {
                     anchors.fill: parent
                     onClicked: {
                         console.log("clicked")
+                        file_explorer.visible = true
                     }
                 }
             }
-            // FolderListModel（注意：不能用 qrc）
-            FolderListModel {
-                id: folderModel
-                folder: "/root"  // 改成真实目录
-                nameFilters: ["*.*"]
-            }
-
-            // 文件列表（可滚动）
-            Flickable {
-                id: flick
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width
-                height: parent.height - 100
-                contentHeight: fileListContent.height
-
-                Column {
-                    id: fileListContent
-                    width: flick.width
-
-                    Repeater {
-                        model: folderModel
-
-                        Rectangle {
-                            width: parent.width
-                            height: 40
-                            color: "#222"
-
-                            Text {
-                                anchors.verticalCenter: parent.verticalCenter
-                                anchors.left: parent.left
-                                anchors.leftMargin: 10
-                                text: fileName
-                                color: "white"
-                            }
-
-                            MouseArea {
-                                anchors.fill: parent
-                                onClicked: {
-                                    selectedImage = filePath
-                                    file_explorer.visible = false
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            */
         }
     }
 
     Rectangle {
         id: menu_button
-        width: 50
-        height: 50
-        radius: 25
+        width: 30
+        height: 30
+        radius: 15
         color: "#80000000"
-        anchors.right: parent.right
+        anchors.left: parent.left
         anchors.top: parent.top
-        anchors.margins: 20
+        anchors.margins: 15
         z: 20
 
         Text {
