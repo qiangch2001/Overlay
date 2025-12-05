@@ -433,9 +433,9 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    let r = 1 - redPanel.alpha
-                    let g = 1 - greenPanel.alpha
-                    let b = 1 - bluePanel.alpha
+                    let r = redPanel.alpha
+                    let g = greenPanel.alpha
+                    let b = bluePanel.alpha
                     let s = r + g + b
 
                     let wR = r / s
