@@ -197,7 +197,7 @@ Window {
                 width: 420
                 height: 40
 
-                property real value: 30
+                property real value: 80
                 property real minValue: 0
                 property real maxValue: 100
 
@@ -302,6 +302,7 @@ Window {
                         }
                     }
 
+
                     Timer {
                         id: throttleTimer
                         interval: 500    // ✅ 50ms = 20Hz
@@ -327,7 +328,7 @@ Window {
     }
 
     Timer {
-        interval: 100   // ✅ 10Hz 控制频率（很稳）
+        interval: 500   // ✅ 10Hz 控制频率（很稳）
         running: true
         repeat: true
 
@@ -341,8 +342,8 @@ Window {
             overlay_opacity += k * error
 
             // ✅ 饱和限制，防止溢出
-            if (overlay_opacity < 0) overlay_opacity = 0
-            if (overlay_opacity > 1) overlay_opacity = 1
+            if (overlay_opacity < 0.1) overlay_opacity = 0.1
+            if (overlay_opacity > 0.7) overlay_opacity = 0.7
 
             console.log("L_measured =", L_measured,
                         "L_target =", L_target,
