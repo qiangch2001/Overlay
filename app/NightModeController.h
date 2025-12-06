@@ -19,8 +19,6 @@ signals:
 
 private:
     int readSensorValue();  // 读取 GPIO
-    bool lastValue = 0;
-    bool pressed = false;
     bool nightMode = false; // false=Day, true=Night
 };
 

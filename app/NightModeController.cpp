@@ -24,21 +24,11 @@ void NightModeController::poll()
 {
     int v = readSensorValue();
 
-    if (v != lastValue) {
-
-        if (lastValue == 0 && v == 1) {
-            pressed = true;
-        }
-
-        else if (lastValue == 1 && v == 0) {
-
-            if (pressed) {
-                nightMode = !nightMode;      // 切换 Day/Night
-                emit modeChanged(nightMode); // 通知 QML
-                pressed = false;
-            }
-        }
-
-        lastValue = v;
+    if (v == 0) {
+        nightMode = false;    // set to Day mode
     }
+    else{
+        nightMode = true;     // set to Night mode
+    }
+    emit modeChanged(nightMode); // emit signal
 }

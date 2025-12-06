@@ -9,7 +9,7 @@ LightSensor::LightSensor(QObject *parent)
 {
 }
 
-// Fetch BH1750's raw data (YOUR ORIGINAL LOGIC)
+// Fetch BH1750's raw data
 int LightSensor::readAmbientLightValue()
 {
     const char *dev = "/dev/i2c-2";
@@ -33,7 +33,7 @@ int LightSensor::readAmbientLightValue()
     return raw;
 }
 
-// Convert raw → alpha (YOUR ORIGINAL LOGIC)
+// Convert raw → alpha
 int LightSensor::computeAlpha(int raw)
 {
     if (raw < 50) raw = 50;

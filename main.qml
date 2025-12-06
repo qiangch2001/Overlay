@@ -32,18 +32,11 @@ Window {
     function pollGpio() {
         var v = readGpio()
 
-        if (v !== lastValue) {
-            if (lastValue === 0 && v === 1)
-                pressedFlag = true
-
-            else if (lastValue === 1 && v === 0) {
-                if (pressedFlag) {
-                    nightMode = !nightMode     // ★ 切换主题模式
-                    pressedFlag = false
-                }
-            }
-
-            lastValue = v
+        if (v == 0) {
+            nightMode = false;    // set to Day mode
+        }
+        else{
+            nightMode = true;     // set to Night mode
         }
     }
 
@@ -456,27 +449,31 @@ Window {
         }
     }
 
-    // ===== 全屏个性化标定页面 =====
+    // ===== Personized Page =====
     Item {
         id: calibPage
         anchors.fill: parent
         visible: false
         z: 1000
 
-        // ===== 背景 =====
+        // ===== Background-color =====
         Rectangle {
             anchors.fill: parent
             color: "black"
         }
 
-        // 重置按钮
+        // Reset button
         Rectangle {
+            id: resetBtn
             width: 100
             height: 40
             radius: 6
             anchors.left: parent.left
             anchors.top: parent.top
             color: "#555"
+
+            border.width: 5
+            border.color: "black"
 
             Text {
                 anchors.centerIn: parent
@@ -495,14 +492,18 @@ Window {
             }
         }
 
-        // 确认按钮
+        // Confirm button
         Rectangle {
+            id: confirmBtn
             width: 100
             height: 40
             radius: 6
             anchors.right: parent.right
             anchors.top: parent.top
             color: "#ff7a3c"
+
+            border.width: 5
+            border.color: "black"
 
             Text {
                 anchors.centerIn: parent
@@ -535,17 +536,36 @@ Window {
             }
         }
 
-        // ===== 顶部标题 =====
-        Text {
-            text: "RGB Personal Luminance Calibration"
-            anchors.top: parent.top
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.topMargin: 5
-            color: "white"
-            font.pointSize: 10
+        // Title
+        Rectangle {
+            id: titleCard
+            radius: 6
+            height: 30
+
+            anchors.left: resetBtn.right
+            anchors.right: confirmBtn.left
+            anchors.leftMargin: 12
+            anchors.rightMargin: 12
+
+            anchors.verticalCenter: resetBtn.verticalCenter
+
+            gradient: Gradient {
+                GradientStop { position: 0.0; color: "#ff3b3b" }  // Red
+                GradientStop { position: 0.5; color: "#3bff6b" }  // Green
+                GradientStop { position: 1.0; color: "#3b6bff" }  // Blue
+            }
+
+            Text {
+                anchors.centerIn: parent
+                text: "RGB Personal Luminance Calibration"
+                color: "white"
+                font.pointSize: 8
+                font.bold: true
+                elide: Text.ElideRight
+            }
         }
 
-        // ===== 三色标定区域 =====
+        // RGB area
         Row {
             id: rgbRow
             anchors.left: parent.left
@@ -574,6 +594,4 @@ Window {
             }
         }
     }
-
-
 }

@@ -1,0 +1,26 @@
+{
+	"BUILD_DIR" : "/home/yunhcao/EC535/lab5/Overlay/build-cross-bbb/overlay_autogen",
+	"CMAKE_BINARY_DIR" : "/home/yunhcao/EC535/lab5/Overlay/build-cross-bbb",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/yunhcao/EC535/lab5/Overlay/build-cross-bbb",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/yunhcao/EC535/lab5/Overlay",
+	"CMAKE_SOURCE_DIR" : "/home/yunhcao/EC535/lab5/Overlay",
+	"INCLUDE_DIR" : "/home/yunhcao/EC535/lab5/Overlay/build-cross-bbb/overlay_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/yunhcao/EC535/lab5/Overlay/res/setting_b.png",
+		"/home/yunhcao/EC535/lab5/Overlay/res/img1.png",
+		"/home/yunhcao/EC535/lab5/Overlay/res/setting_w.png",
+		"/home/yunhcao/EC535/lab5/Overlay/res/brightness_b.png",
+		"/home/yunhcao/EC535/lab5/Overlay/res/brightness_w.png"
+	],
+	"LOCK_FILE" : "/home/yunhcao/EC535/lab5/Overlay/build-cross-bbb/CMakeFiles/overlay_autogen.dir/AutoRcc_img_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "img" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_img.cpp",
+	"RCC_EXECUTABLE" : "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/yunhcao/EC535/lab5/Overlay/build-cross-bbb/CMakeFiles/overlay_autogen.dir/AutoRcc_img_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/home/yunhcao/EC535/lab5/Overlay/img.qrc",
+	"VERBOSITY" : 0
+}

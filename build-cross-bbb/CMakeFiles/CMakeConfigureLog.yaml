@@ -1,0 +1,262 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:199 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The target system is: Buildroot - 1 - armv7l
+      The host system is: Linux - 4.18.0-553.75.1.el8_10.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/bin/arm-linux-g++ 
+      Build flags: -D_LARGEFILE_SOURCE;-D_LARGEFILE64_SOURCE;-D_FILE_OFFSET_BITS=64;-Os
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/yunhcao/EC535/lab5/Overlay/build-cross-bbb/CMakeFiles/3.26.5/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/yunhcao/EC535/lab5/Overlay/build-cross-bbb/CMakeFiles/CMakeScratch/TryCompile-iVWg74"
+      binary: "/home/yunhcao/EC535/lab5/Overlay/build-cross-bbb/CMakeFiles/CMakeScratch/TryCompile-iVWg74"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Os"
+      CMAKE_CXX_FLAGS_DEBUG: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/share/buildroot;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/share/buildroot"
+      CMAKE_SYSROOT: "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: /home/yunhcao/EC535/lab5/Overlay/build-cross-bbb/CMakeFiles/CMakeScratch/TryCompile-iVWg74
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_05a80/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_05a80.dir/build.make CMakeFiles/cmTC_05a80.dir/build
+        gmake[1]: Entering directory '/ad/eng/users/y/u/yunhcao/EC535/lab5/Overlay/build-cross-bbb/CMakeFiles/CMakeScratch/TryCompile-iVWg74'
+        Building CXX object CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o
+        /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/bin/arm-linux-g++ --sysroot=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot   -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Os   -DNDEBUG   -v -o CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/arm-linux-g++.br_real
+        Target: arm-buildroot-linux-gnueabihf
+        Configured with: ./configure --prefix=/opt/armv7-eabihf--glibc--stable-2020.08-1 --sysconfdir=/opt/armv7-eabihf--glibc--stable-2020.08-1/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/opt/armv7-eabihf--glibc--stable-2020.08-1/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-mpc=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-mpfr=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-pkgversion='Buildroot 2020.08-14-ge5a2a90' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a9 --with-fpu=vfpv3-d16 --with-float=hard --with-mode=arm --enable-languages=c,c++,fortran --with-build-time-tools=/opt/armv7-eabihf--glibc--stable-2020.08-1/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp
+        Thread model: posix
+        gcc version 9.3.0 (Buildroot 2020.08-14-ge5a2a90) 
+        COLLECT_GCC_OPTIONS='-mabi=aapcs-linux' '-mfpu=vfpv3-d16' '-marm' '-mfloat-abi=hard' '-mcpu=cortex-a8' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-Os' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-march=armv7-a+sec+fp'
+         /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/cc1plus -quiet -v -iprefix /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/ -isysroot /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot -D_GNU_SOURCE -D _LARGEFILE_SOURCE -D _LARGEFILE64_SOURCE -D _FILE_OFFSET_BITS=64 -D NDEBUG /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mabi=aapcs-linux -mfpu=vfpv3-d16 -marm -mfloat-abi=hard -mcpu=cortex-a8 -mtls-dialect=gnu -march=armv7-a+sec+fp -auxbase-strip CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o -Os -version -o /tmp/cccK7fur.s
+        GNU C++14 (Buildroot 2020.08-14-ge5a2a90) version 9.3.0 (arm-buildroot-linux-gnueabihf)
+        	compiled by GNU C version 4.9.2, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0"
+        ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/arm-buildroot-linux-gnueabihf"
+        ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/backward"
+        ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include"
+        ignoring nonexistent directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/local/include"
+        ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include-fixed"
+        ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0
+         /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/arm-buildroot-linux-gnueabihf
+         /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/backward
+         /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include
+         /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include-fixed
+         /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include
+         /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/include
+        End of search list.
+        GNU C++14 (Buildroot 2020.08-14-ge5a2a90) version 9.3.0 (arm-buildroot-linux-gnueabihf)
+        	compiled by GNU C version 4.9.2, GMP version 6.1.2, MPFR version 4.0.2, MPC version 1.1.0, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 9fad03319fd9ce493d844a5aac74e0bf
+        COLLECT_GCC_OPTIONS='-mabi=aapcs-linux' '-mfpu=vfpv3-d16' '-marm' '-mfloat-abi=hard' '-mcpu=cortex-a8' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-Os' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-march=armv7-a+sec+fp'
+         /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/bin/as -v -march=armv7-a+sec -mfloat-abi=hard -mfpu=vfpv3-d16 -meabi=5 -o CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o /tmp/cccK7fur.s
+        GNU assembler version 2.33.1 (arm-buildroot-linux-gnueabihf) using BFD version (GNU Binutils) 2.33.1
+        COMPILER_PATH=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/bin/
+        LIBRARY_PATH=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-mabi=aapcs-linux' '-mfpu=vfpv3-d16' '-marm' '-mfloat-abi=hard' '-mcpu=cortex-a8' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-Os' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-march=armv7-a+sec+fp'
+        Linking CXX executable cmTC_05a80
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05a80.dir/link.txt --verbose=1
+        /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/bin/arm-linux-g++ --sysroot=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Os   -DNDEBUG  -v CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_05a80 
+        Using built-in specs.
+        COLLECT_GCC=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/arm-linux-g++.br_real
+        COLLECT_LTO_WRAPPER=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/lto-wrapper
+        Target: arm-buildroot-linux-gnueabihf
+        Configured with: ./configure --prefix=/opt/armv7-eabihf--glibc--stable-2020.08-1 --sysconfdir=/opt/armv7-eabihf--glibc--stable-2020.08-1/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/opt/armv7-eabihf--glibc--stable-2020.08-1/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-mpc=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-mpfr=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-pkgversion='Buildroot 2020.08-14-ge5a2a90' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a9 --with-fpu=vfpv3-d16 --with-float=hard --with-mode=arm --enable-languages=c,c++,fortran --with-build-time-tools=/opt/armv7-eabihf--glibc--stable-2020.08-1/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp
+        Thread model: posix
+        gcc version 9.3.0 (Buildroot 2020.08-14-ge5a2a90) 
+        COMPILER_PATH=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/bin/
+        LIBRARY_PATH=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='-mabi=aapcs-linux' '-mfpu=vfpv3-d16' '-marm' '-mfloat-abi=hard' '-mcpu=cortex-a8' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-Os' '-D' 'NDEBUG' '-v' '-o' 'cmTC_05a80' '-shared-libgcc' '-mtls-dialect=gnu' '-march=armv7-a+sec+fp'
+         /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/collect2 -plugin /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/liblto_plugin.so -plugin-opt=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrq8Ktf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -o cmTC_05a80 /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtbegin.o -L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0 -L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc -L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib -L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtend.o /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o
+        COLLECT_GCC_OPTIONS='-mabi=aapcs-linux' '-mfpu=vfpv3-d16' '-marm' '-mfloat-abi=hard' '-mcpu=cortex-a8' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-Os' '-D' 'NDEBUG' '-v' '-o' 'cmTC_05a80' '-shared-libgcc' '-mtls-dialect=gnu' '-march=armv7-a+sec+fp'
+        gmake[1]: Leaving directory '/ad/eng/users/y/u/yunhcao/EC535/lab5/Overlay/build-cross-bbb/CMakeFiles/CMakeScratch/TryCompile-iVWg74'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0]
+          add: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/arm-buildroot-linux-gnueabihf]
+          add: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/backward]
+          add: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include]
+          add: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include-fixed]
+          add: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include]
+          add: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0]
+        collapse include dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/arm-buildroot-linux-gnueabihf] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0/arm-buildroot-linux-gnueabihf]
+        collapse include dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/backward] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0/backward]
+        collapse include dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include]
+        collapse include dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include-fixed] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include-fixed]
+        collapse include dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include]
+        collapse include dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/include] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+        implicit include dirs: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0/arm-buildroot-linux-gnueabihf;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0/backward;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include-fixed;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(arm-linux-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /home/yunhcao/EC535/lab5/Overlay/build-cross-bbb/CMakeFiles/CMakeScratch/TryCompile-iVWg74]
+        ignore line: []
+        ignore line: [Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_05a80/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_05a80.dir/build.make CMakeFiles/cmTC_05a80.dir/build]
+        ignore line: [gmake[1]: Entering directory '/ad/eng/users/y/u/yunhcao/EC535/lab5/Overlay/build-cross-bbb/CMakeFiles/CMakeScratch/TryCompile-iVWg74']
+        ignore line: [Building CXX object CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/bin/arm-linux-g++ --sysroot=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot   -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Os   -DNDEBUG   -v -o CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/arm-linux-g++.br_real]
+        ignore line: [Target: arm-buildroot-linux-gnueabihf]
+        ignore line: [Configured with: ./configure --prefix=/opt/armv7-eabihf--glibc--stable-2020.08-1 --sysconfdir=/opt/armv7-eabihf--glibc--stable-2020.08-1/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/opt/armv7-eabihf--glibc--stable-2020.08-1/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-mpc=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-mpfr=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-pkgversion='Buildroot 2020.08-14-ge5a2a90' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a9 --with-fpu=vfpv3-d16 --with-float=hard --with-mode=arm --enable-languages=c,c++,fortran --with-build-time-tools=/opt/armv7-eabihf--glibc--stable-2020.08-1/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.3.0 (Buildroot 2020.08-14-ge5a2a90) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-mabi=aapcs-linux' '-mfpu=vfpv3-d16' '-marm' '-mfloat-abi=hard' '-mcpu=cortex-a8' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-Os' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-march=armv7-a+sec+fp']
+        ignore line: [ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/cc1plus -quiet -v -iprefix /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/ -isysroot /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot -D_GNU_SOURCE -D _LARGEFILE_SOURCE -D _LARGEFILE64_SOURCE -D _FILE_OFFSET_BITS=64 -D NDEBUG /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mabi=aapcs-linux -mfpu=vfpv3-d16 -marm -mfloat-abi=hard -mcpu=cortex-a8 -mtls-dialect=gnu -march=armv7-a+sec+fp -auxbase-strip CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o -Os -version -o /tmp/cccK7fur.s]
+        ignore line: [GNU C++14 (Buildroot 2020.08-14-ge5a2a90) version 9.3.0 (arm-buildroot-linux-gnueabihf)]
+        ignore line: [	compiled by GNU C version 4.9.2  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0"]
+        ignore line: [ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/arm-buildroot-linux-gnueabihf"]
+        ignore line: [ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/backward"]
+        ignore line: [ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include"]
+        ignore line: [ignoring nonexistent directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/local/include"]
+        ignore line: [ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/../../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0]
+        ignore line: [ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/arm-buildroot-linux-gnueabihf]
+        ignore line: [ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/9.3.0/backward]
+        ignore line: [ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include]
+        ignore line: [ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/include-fixed]
+        ignore line: [ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/include]
+        ignore line: [ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++14 (Buildroot 2020.08-14-ge5a2a90) version 9.3.0 (arm-buildroot-linux-gnueabihf)]
+        ignore line: [	compiled by GNU C version 4.9.2  GMP version 6.1.2  MPFR version 4.0.2  MPC version 1.1.0  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 9fad03319fd9ce493d844a5aac74e0bf]
+        ignore line: [COLLECT_GCC_OPTIONS='-mabi=aapcs-linux' '-mfpu=vfpv3-d16' '-marm' '-mfloat-abi=hard' '-mcpu=cortex-a8' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-Os' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-march=armv7-a+sec+fp']
+        ignore line: [ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/bin/as -v -march=armv7-a+sec -mfloat-abi=hard -mfpu=vfpv3-d16 -meabi=5 -o CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o /tmp/cccK7fur.s]
+        ignore line: [GNU assembler version 2.33.1 (arm-buildroot-linux-gnueabihf) using BFD version (GNU Binutils) 2.33.1]
+        ignore line: [COMPILER_PATH=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/bin/]
+        ignore line: [LIBRARY_PATH=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-mabi=aapcs-linux' '-mfpu=vfpv3-d16' '-marm' '-mfloat-abi=hard' '-mcpu=cortex-a8' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-Os' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtls-dialect=gnu' '-march=armv7-a+sec+fp']
+        ignore line: [Linking CXX executable cmTC_05a80]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_05a80.dir/link.txt --verbose=1]
+        ignore line: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/bin/arm-linux-g++ --sysroot=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -Os   -DNDEBUG  -v CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_05a80 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/arm-linux-g++.br_real]
+        ignore line: [COLLECT_LTO_WRAPPER=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/lto-wrapper]
+        ignore line: [Target: arm-buildroot-linux-gnueabihf]
+        ignore line: [Configured with: ./configure --prefix=/opt/armv7-eabihf--glibc--stable-2020.08-1 --sysconfdir=/opt/armv7-eabihf--glibc--stable-2020.08-1/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/opt/armv7-eabihf--glibc--stable-2020.08-1/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --with-gmp=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-mpc=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-mpfr=/opt/armv7-eabihf--glibc--stable-2020.08-1 --with-pkgversion='Buildroot 2020.08-14-ge5a2a90' --with-bugurl=http://bugs.buildroot.net/ --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a9 --with-fpu=vfpv3-d16 --with-float=hard --with-mode=arm --enable-languages=c,c++,fortran --with-build-time-tools=/opt/armv7-eabihf--glibc--stable-2020.08-1/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.3.0 (Buildroot 2020.08-14-ge5a2a90) ]
+        ignore line: [COMPILER_PATH=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/bin/]
+        ignore line: [LIBRARY_PATH=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib/:/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-mabi=aapcs-linux' '-mfpu=vfpv3-d16' '-marm' '-mfloat-abi=hard' '-mcpu=cortex-a8' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-Os' '-D' 'NDEBUG' '-v' '-o' 'cmTC_05a80' '-shared-libgcc' '-mtls-dialect=gnu' '-march=armv7-a+sec+fp']
+        link line: [ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/collect2 -plugin /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/liblto_plugin.so -plugin-opt=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccrq8Ktf.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -o cmTC_05a80 /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtbegin.o -L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0 -L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc -L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib -L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtend.o /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o]
+          arg [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../libexec/gcc/arm-buildroot-linux-gnueabihf/9.3.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccrq8Ktf.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--sysroot=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-linux-armhf.so.3] ==> ignore
+          arg [-X] ==> ignore
+          arg [-m] ==> ignore
+          arg [armelf_linux_eabi] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_05a80] ==> ignore
+          arg [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o] ==> obj [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o]
+          arg [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o] ==> obj [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o]
+          arg [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtbegin.o] ==> obj [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtbegin.o]
+          arg [-L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0] ==> dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0]
+          arg [-L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc] ==> dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc]
+          arg [-L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/lib] ==> dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/lib]
+          arg [-L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib] ==> dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib]
+          arg [-L/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib] ==> dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+          arg [CMakeFiles/cmTC_05a80.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtend.o] ==> obj [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtend.o]
+          arg [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o] ==> obj [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o]
+        collapse obj [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtbegin.o] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtbegin.o]
+        collapse obj [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtend.o] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtend.o]
+        collapse library dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0]
+        collapse library dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc]
+        collapse library dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/bin/../lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/../../../../arm-buildroot-linux-gnueabihf/lib] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/lib]
+        collapse library dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib]
+        collapse library dir [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib] ==> [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crt1.o;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtbegin.o;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0/crtend.o;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o]
+        implicit dirs: [/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc/arm-buildroot-linux-gnueabihf/9.3.0;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/lib/gcc;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/lib;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/lib;/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+...
