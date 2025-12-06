@@ -169,15 +169,19 @@ Window {
     // ====================================
     // Setting Button
     // ====================================
-    Image {
+    Rectangle {
         id: setting_button
-        width: 30
-        height: 30
+        width: 30; height: 30; radius: 15
+        color: nightMode ? "#80000000" : "#80FFFFFF"
         anchors.right: parent.right
         anchors.top: parent.top
-        anchors.margins:15
-        source: nightMode ? "res/setting_w.png" : "res/setting_b.png"
+        anchors.margins: 15
         z: 20
+
+        Image {
+            anchors.fill: parent
+            source: nightMode ? "res/setting_w.png" : "res/setting_b.png"
+        }
 
         MouseArea {
             anchors.fill: parent
