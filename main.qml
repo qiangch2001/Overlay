@@ -32,7 +32,7 @@ Window {
     function pollGpio() {
         var v = readGpio()
 
-        if (v == 0) {
+        if (v === 0) {
             nightMode = false;    // set to Day mode
         }
         else{
@@ -348,11 +348,10 @@ Window {
 
                         Repeater {
                             model: [
-                                "Linear RGB",
-                                "Perceived Brightness",
-                                "HSV Value",
-                                "HSL Lightness",
-                                "Personalized"
+                                { text: "Physical",         method: 0 },
+                                { text: "Top 5%",           method: 1 },
+                                { text: "Top 10%",          method: 2 },
+                                { text: "Weighted",         method: 3 },
                             ]
 
                             Rectangle {
@@ -377,14 +376,10 @@ Window {
                                     onExited: parent.hovered = false
 
                                     onClicked: {
-                                        brightnessModeSelector.selectedMode = modelData
+                                        brightnessModeSelector.selectedMode = modelData.text
                                         dropdown.visible = false
 
-                                        if (modelData === "Personalized") {
-                                            personalizeButton.visible = true
-                                        } else {
-                                            personalizeButton.visible = false
-                                        }
+                                        Brightness.setAlgorithm(modelData.method)
                                     }
                                 }
                             }
@@ -489,9 +484,9 @@ Window {
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    redPanel.alpha   = 0.5
-                    greenPanel.alpha = 0.5
-                    bluePanel.alpha  = 0.5
+                    redPanel.alpha   = 0.2126
+                    greenPanel.alpha = 0.7152
+                    bluePanel.alpha  = 0.0722
                 }
             }
         }
