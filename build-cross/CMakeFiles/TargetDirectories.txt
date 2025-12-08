@@ -1,0 +1,8 @@
+/home/yunhcao/EC535/lab5/Overlay/build-cross/CMakeFiles/overlay.dir
+/home/yunhcao/EC535/lab5/Overlay/build-cross/CMakeFiles/edit_cache.dir
+/home/yunhcao/EC535/lab5/Overlay/build-cross/CMakeFiles/rebuild_cache.dir
+/home/yunhcao/EC535/lab5/Overlay/build-cross/CMakeFiles/list_install_components.dir
+/home/yunhcao/EC535/lab5/Overlay/build-cross/CMakeFiles/install.dir
+/home/yunhcao/EC535/lab5/Overlay/build-cross/CMakeFiles/install/local.dir
+/home/yunhcao/EC535/lab5/Overlay/build-cross/CMakeFiles/install/strip.dir
+/home/yunhcao/EC535/lab5/Overlay/build-cross/CMakeFiles/overlay_autogen.dir

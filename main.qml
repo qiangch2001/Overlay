@@ -318,7 +318,7 @@ Window {
                     }
 
                     Text {
-                        text: "▾"
+                        text: dropdown.visible ? "^" : "v"
                         color: textColor
                         font.pixelSize: 10
                         Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
@@ -329,7 +329,6 @@ Window {
                     anchors.fill: parent;
                     onClicked: {
                         dropdown.visible = !dropdown.visible
-                        personalizeButton.visible = false
                     }
                 }
 
@@ -352,6 +351,7 @@ Window {
                                 { text: "Top 5%",           method: 1 },
                                 { text: "Top 10%",          method: 2 },
                                 { text: "Weighted",         method: 3 },
+                                { text: "Custom",           method: 4 }
                             ]
 
                             Rectangle {
@@ -364,7 +364,7 @@ Window {
 
                                 Text {
                                     anchors.centerIn: parent
-                                    text: modelData
+                                    text: modelData.text
                                     color: textColor
                                     font.pixelSize: 10
                                 }
@@ -390,13 +390,18 @@ Window {
 
             Rectangle {
                 id: personalizeButton
-                width: 120
-                height: 40
+                width: 100
+                height: 30
                 color: "#323232"
                 radius: 6
 
+                anchors.left: parent.left
+                anchors.leftMargin: 0
+
+                visible: brightnessModeSelector.selectedMode === "Custom"
+                
                 Text {
-                    text: "Personalize"
+                    text: "Custom"
                     anchors.centerIn: parent
                     font.pointSize: 12
                     font.bold: true
@@ -407,7 +412,7 @@ Window {
                     anchors.fill: parent
                     cursorShape: Qt.PointingHandCursor
                     onClicked: {
-                        calibPage.visible = true   // ✅ 打开全屏页面
+                        calibPage.visible = true
                     }
                 }
             }
