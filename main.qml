@@ -302,7 +302,7 @@ Window {
                 border.color: nightMode ? "#444" : "#666"
                 anchors.horizontalCenter: parent.horizontalCenter
 
-                property string selectedMode: "Linear RGB"
+                property string selectedMode: "Physical"
 
                 RowLayout {
                     anchors.fill: parent
@@ -350,8 +350,7 @@ Window {
                                 { text: "Physical",         method: 0 },
                                 { text: "Top 5%",           method: 1 },
                                 { text: "Top 10%",          method: 2 },
-                                { text: "Weighted",         method: 3 },
-                                { text: "Custom",           method: 4 }
+                                { text: "Weighted",         method: 3 }
                             ]
 
                             Rectangle {
@@ -398,7 +397,7 @@ Window {
                 anchors.left: parent.left
                 anchors.leftMargin: 0
 
-                visible: brightnessModeSelector.selectedMode === "Custom"
+                visible: true
                 
                 Text {
                     text: "Custom"
