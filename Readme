@@ -9,4 +9,4 @@ To compile our source code:
   cmake --build build-cross -j$(nproc)
 
 3. Once compilation is done, go to the auto-generated build-cross dir, there is an excutable named Display, which is the excutable file on bbb.
-4. To run our code on the bbb, you also need to send the some png/jpg images to /root dir on the board before running the cross-compiled Display excutable.
+4. To run our code on the bbb, you also need to send some png/jpg images to /root dir on the board before running the cross-compiled Display excutable.
