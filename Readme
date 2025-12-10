@@ -1,5 +1,12 @@
-cmake -S . -B build-cross \
-  -DCMAKE_TOOLCHAIN_FILE=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/share/buildroot/toolchainfile.cmake \
-  -DCMAKE_BUILD_TYPE=Release
+To compile our source code:
+1. Make sure you're under directory /Adaptive_Brightness_Control/Overlay.
+2. Run the following commonds:
 
-cmake --build build-cross -j$(nproc)
+  cmake -S . -B build-cross \
+    -DCMAKE_TOOLCHAIN_FILE=/ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/usr/share/buildroot/toolchainfile.cmake \
+    -DCMAKE_BUILD_TYPE=Release
+
+  cmake --build build-cross -j$(nproc)
+
+3. Once compilation is done, go to the auto-generated build-cross dir, there is an excutable named overlay, which is the   excutable file on bbb.
+4. To run our code on the bbb, you also need to send the 5 images (img1.png ~img5.png) under Audaptive_Brightness_Control dir to the board before running the cross-compiled overlay excutable.
