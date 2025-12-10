@@ -8,16 +8,12 @@ Window {
     height: Screen.height
     color: "black"
 
-    // -------------------------------
-    // 夜间/日间模式属性
-    // -------------------------------
+    // Day/Night Mode
     property bool nightMode: true
     property color bgColor: nightMode ? "black" : "white"
     property color textColor: nightMode ? "white" : "black"
 
-    // -------------------------------
-    // 读取 GPIO20
-    // -------------------------------
+    // Read Gpoi
     function readGpio() {
         return Gpio.readValue();
     }
@@ -26,13 +22,11 @@ Window {
     property int lastValue: 0
     property bool pressedFlag: false
 
-    // -------------------------------
-    // GPIO 状态机：0→1→0 触发模式切换
-    // -------------------------------
+    // Change mode
     function pollGpio() {
         var v = readGpio()
 
-        if (v === 0) {
+        if(v === 0) {
             nightMode = false;    // set to Day mode
         }
         else{
@@ -40,7 +34,7 @@ Window {
         }
     }
 
-    // GPIO 定时器
+    // GPIO Timer
     Timer {
         interval: 100
         repeat: true
@@ -48,11 +42,9 @@ Window {
         onTriggered: pollGpio()
     }
 
-    // -----------------------------------
-    // 显示图片区域
-    // -----------------------------------
     property string selected_image: ""
 
+    // Show Images
     Image {
         anchors.fill: parent
         source: selected_image
@@ -60,9 +52,7 @@ Window {
         z: 0
     }
 
-    // -----------------------------------
-    // 左侧 File Explorer 面板
-    // -----------------------------------
+    // File Explorer
     Rectangle {
         id: menu_panel
         width: parent.width * 0.6
@@ -85,13 +75,14 @@ Window {
                 color: textColor
             }
 
+            // File list Module
             Rectangle {
                 id: file_window
                 width: parent.width
                 height: parent.height - 30
                 color: bgColor
 
-                // FolderListModel（注意：不能用 qrc）
+                // FolderListModel
                 FolderListModel {
                     id: folderModel
                     folder: "/root"
@@ -138,9 +129,7 @@ Window {
         }
     }
 
-    // ====================================
-    // Menu Button
-    // ====================================
+    // File Explorer Button
     Rectangle {
         id: menu_button
         width: 30; height: 30; radius: 15
@@ -166,9 +155,7 @@ Window {
         }
     }
 
-    // ====================================
     // Setting Button
-    // ====================================
     Rectangle {
         id: setting_button
         width: 30; height: 30; radius: 15
@@ -192,9 +179,7 @@ Window {
         }
     }
 
-    // ====================================
-    // 右侧 Setting 面板
-    // ====================================
+    // Setting Panel
     Rectangle {
         id: setting_panel
         width: parent.width * 0.6
@@ -216,7 +201,7 @@ Window {
                 color: textColor
             }
 
-            // ===== Brightness Slider =====
+            // Brightness Slider
             Item {
                 id: bsb
                 width: 280
@@ -266,9 +251,7 @@ Window {
                         color: sliderMouse.pressed ? "#ff9c6b" : "#ff7a3c"
                         y: bg.y + bg.height / 2 - height / 2
 
-                        x: (bsb.value - bsb.minValue) /
-                           (bsb.maxValue - bsb.minValue) *
-                           (track.width - width)
+                        x: (bsb.value - bsb.minValue) / (bsb.maxValue - bsb.minValue) * (track.width - width)
 
                         Behavior on x { NumberAnimation { duration: 80 } }
                     }
@@ -292,7 +275,7 @@ Window {
                 }
             }
 
-            // ===== 模式选择下拉框 =====
+            // Change Computing Method
             Rectangle {
                 id: brightnessModeSelector
                 width: 280
@@ -418,11 +401,9 @@ Window {
         }
     }
 
-    // -----------------------------------
-    // overlay 控制屏幕亮度调整
-    // -----------------------------------
     property real overlay_opacity: 0.3
 
+    // Overlay Module
     Rectangle {
         id: overlay
         anchors.fill: parent
@@ -452,14 +433,14 @@ Window {
         }
     }
 
-    // ===== Personized Page =====
+    // Personized Page
     Item {
         id: calibPage
         anchors.fill: parent
         visible: false
         z: 1000
 
-        // ===== Background-color =====
+        // Background-color
         Rectangle {
             anchors.fill: parent
             color: "black"

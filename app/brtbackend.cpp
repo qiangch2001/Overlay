@@ -1,4 +1,3 @@
-// BrightnessBackend.cpp
 #include "brtbackend.h"
 
 BrtBackend::BrtBackend(QObject* parent)

@@ -7,22 +7,22 @@ Item {
 
     property color baseColor: "red"
     property string label: "Red"
-    property real alpha: 0.5   // 黑幕透明度（0=最亮，1=最暗）
+    property real alpha: 0.5
 
-    // ===== 颜色背景 =====
+    // background
     Rectangle {
         anchors.fill: parent
         color: baseColor
     }
 
-    // ===== 黑色遮罩 =====
+    // black overlay
     Rectangle {
         anchors.fill: parent
         color: "black"
         opacity: root.alpha
     }
 
-    // ===== 标题 =====
+    // title
     Text {
         text: root.label
         anchors.top: parent.top
@@ -33,7 +33,7 @@ Item {
         font.bold: true
     }
 
-    // ===== 竖直滑块 =====
+    // slider
     Item {
         id: slider
         width: 40
@@ -68,7 +68,7 @@ Item {
         }
     }
 
-    // ===== 数值显示 =====
+    // Show number
     Text {
         text: "Alpha: " + root.alpha.toFixed(2)
         anchors.bottom: parent.bottom
