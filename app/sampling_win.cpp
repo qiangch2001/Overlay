@@ -1,10 +1,9 @@
+// This is not used in the latest version, kept for reference.
 #include "sampling.h"
 
 #include <windows.h>
 #include <stdint.h>
 
-// =================== 截屏 + 采样函数 =====================
-// 返回采样数量，samples[] 必须有足够空间
 int capture_samples(double* samples, int maxSamples) {
     HDC hScreenDC = GetDC(NULL);
     if(!hScreenDC) return 0;
