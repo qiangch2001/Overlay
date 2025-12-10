@@ -80,7 +80,6 @@ overlay_autogen/EWIEGA46WW/qrc_qml.cpp: /ad/eng/courses/ec/ec535/bbb/buildroot-2
 overlay_autogen/EWIEGA46WW/qrc_img.cpp: /home/yunhcao/EC535/lab5/Overlay/img.qrc
 overlay_autogen/EWIEGA46WW/qrc_img.cpp: CMakeFiles/overlay_autogen.dir/AutoRcc_img_EWIEGA46WW_Info.json
 overlay_autogen/EWIEGA46WW/qrc_img.cpp: /home/yunhcao/EC535/lab5/Overlay/res/setting_b.png
-overlay_autogen/EWIEGA46WW/qrc_img.cpp: /home/yunhcao/EC535/lab5/Overlay/res/img1.png
 overlay_autogen/EWIEGA46WW/qrc_img.cpp: /home/yunhcao/EC535/lab5/Overlay/res/setting_w.png
 overlay_autogen/EWIEGA46WW/qrc_img.cpp: /home/yunhcao/EC535/lab5/Overlay/res/brightness_b.png
 overlay_autogen/EWIEGA46WW/qrc_img.cpp: /home/yunhcao/EC535/lab5/Overlay/res/brightness_w.png

@@ -10,16 +10,15 @@ class NightModeController : public QObject
 public:
     explicit NightModeController(QObject *parent = nullptr);
 
-    Q_INVOKABLE void poll();  // 定时轮询 GPIO
+    Q_INVOKABLE void poll();  // Poll periodically for GPIO value
 
     Q_INVOKABLE bool isNightMode() const { return nightMode; }
 
 signals:
-    void modeChanged(bool night);  // 通知 QML 切换配色
+    void modeChanged(bool night);  // Indicate mode change to QML
 
 private:
-    int readSensorValue();  // 读取 GPIO
-    bool nightMode = false; // false=Day, true=Night
+    bool nightMode = false; // False=Day, true=Night
 };
 
 #endif // NIGHTMODECONTROLLER_H

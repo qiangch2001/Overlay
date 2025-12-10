@@ -9,7 +9,7 @@ class GpioReader : public QObject
 public:
     explicit GpioReader(QObject *parent = nullptr);
 
-    Q_INVOKABLE int readValue();   // 返回 0 或 1
+    Q_INVOKABLE int readValue();
 };
 
 #endif

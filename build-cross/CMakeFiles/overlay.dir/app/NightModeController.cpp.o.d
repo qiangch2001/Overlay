@@ -312,4 +312,5 @@ CMakeFiles/overlay.dir/app/NightModeController.cpp.o: \
  /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0/bits/shared_ptr_base.h \
  /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0/bits/shared_ptr_atomic.h \
  /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0/backward/auto_ptr.h \
- /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0/pstl/glue_memory_defs.h
+ /ad/eng/courses/ec/ec535/bbb/buildroot-2021.02.1/output/host/opt/ext-toolchain/arm-buildroot-linux-gnueabihf/include/c++/9.3.0/pstl/glue_memory_defs.h \
+ /home/yunhcao/EC535/lab5/Overlay/app/gpioreader.h
